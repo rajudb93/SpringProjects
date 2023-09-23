@@ -12,7 +12,7 @@ public class DoctorController {
     private Doctor myDoctor1;
 
     private Doctor myDoctor2;
-    DoctorController(@Qualifier("dentist") Doctor myDoctor1 , @Qualifier("dentist")Doctor myDoctor2){
+        DoctorController(@Qualifier("dentist") Doctor myDoctor1 , @Qualifier("dentist")Doctor myDoctor2){
         this.myDoctor1 = myDoctor1;
         this.myDoctor2 = myDoctor2;
         System.out.println("inside doctor controller constructor");
