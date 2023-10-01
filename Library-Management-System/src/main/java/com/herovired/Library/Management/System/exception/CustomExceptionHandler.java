@@ -15,7 +15,7 @@ import java.util.HashMap;
 public class CustomExceptionHandler {
 
 
-    @ExceptionHandler
+    @ExceptionHandler(IdNotFoundException.class)
     public ResponseEntity<?> handleIdNotFoundException(Exception ex, WebRequest wb){
         var idNotFoundExceptionResponse = new IdNotFoundExceptionResponse();
         idNotFoundExceptionResponse.setExceptionMessage(ex.getMessage());
@@ -25,12 +25,12 @@ public class CustomExceptionHandler {
         return new ResponseEntity<>(idNotFoundExceptionResponse, HttpStatus.BAD_REQUEST);
     }
 
-//    @ExceptionHandler
-//    public ResponseEntity<?> handleCategoryIdNotFoundException(Exception ex , WebRequest wb){
-//        var categoryIdNotFoundException = new CategoryIdNotFoundException(ex.getMessage());
-//
-//        return new ResponseEntity<>(categoryIdNotFoundException,HttpStatus.BAD_REQUEST);
-//    }
+    @ExceptionHandler(CategoryIdNotFoundException.class)
+    public ResponseEntity<?> handleCategoryIdNotFoundException(Exception ex , WebRequest wb){
+        var categoryIdNotFoundException = new CategoryIdNotFoundException(ex.getMessage());
+
+        return new ResponseEntity<>(categoryIdNotFoundException,HttpStatus.BAD_REQUEST);
+    }
 
 
 
