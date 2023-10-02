@@ -1,6 +1,6 @@
 package com.herovired.Library.Management.System.Authentication;
 
-public class UserLoginRequestObject {
+public class    UserLoginRequestObject {
     private String username;
 
     private String password;
